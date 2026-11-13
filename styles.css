@@ -1,0 +1,228 @@
+/* Icon shim (Font Awesome ордуна, тышкы файлсыз) */
+        .fas, .fa-solid { font-style: normal; font-family: system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif; font-weight: 400; display: inline-block; line-height: 1; }
+        .fa-heart::before { content: "\2665"; }
+        .fa-pause::before { content: "\275A\275A"; letter-spacing: -1px; }
+        .fa-play::before { content: "\25B6"; }
+        .fa-times::before { content: "\2715"; }
+        .fa-volume-up::before { content: "\1F50A"; }
+        .fa-volume-mute::before { content: "\1F507"; }
+        .fa-music::before { content: "\266B"; }
+        .fa-location-arrow::before { content: "\27A4"; }
+        .fa-paper-plane::before { content: "\27A4"; }
+        .fa-map-marker-alt::before { content: "\1F4CD"; }
+        .fa-glass-cheers::before { content: "\1F942"; }
+        .fa-hand-pointer::before { content: "\1F446"; }
+        .fa-rings-wedding::before { content: "\1F48D"; }
+
+:root {
+            --cream-bg: #FAF6F0;
+            --cream-dark: #EFE6D8;
+            --cream-flap: #E7DCCB;
+            --gold-accent: #C5A059;
+            --gold-dark: #9E7B36;
+            --text-dark: #2C2724;
+            --text-muted: #6E655F;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .font-serif-elegant {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .font-script {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        /* Envelope Styles */
+        .envelope-wrapper {
+            perspective: 1400px;
+        }
+
+        .envelope-container {
+            position: relative;
+            width: 340px;
+            height: 230px;
+            background: linear-gradient(145deg, #F4ECE1, #E8DDD0);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(44, 39, 36, 0.25), inset 0 1px 1px rgba(255,255,255,0.8);
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+        }
+
+        @media (min-width: 640px) {
+            .envelope-container {
+                width: 440px;
+                height: 290px;
+            }
+        }
+
+        /* Inner White Invitation Card */
+        .inner-card {
+            position: absolute;
+            left: 5%;
+            bottom: 8%;
+            width: 90%;
+            height: 85%;
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            transition: transform 1.1s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.8s ease;
+        }
+
+        /* Envelope Pocket Flaps */
+        .pocket-left {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #EFE5D8 0%, #E3D6C5 100%);
+            clip-path: polygon(0 0, 52% 52%, 0 100%);
+            border-radius: 12px 0 0 12px;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .pocket-right {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(225deg, #EFE5D8 0%, #E3D6C5 100%);
+            clip-path: polygon(100% 0, 48% 52%, 100% 100%);
+            border-radius: 0 12px 12px 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .pocket-bottom {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, #E2D4C3 0%, #EFE6D8 100%);
+            clip-path: polygon(0 100%, 50% 46%, 100% 100%);
+            border-radius: 0 0 12px 12px;
+            z-index: 4;
+            box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+            pointer-events: none;
+        }
+
+        /* Top Flap */
+        .top-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 56%;
+            background: linear-gradient(180deg, #E5D7C5 0%, #EFE5D7 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            border-radius: 12px 12px 0 0;
+            transform-origin: top center;
+            transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s step-end;
+            z-index: 5;
+            filter: drop-shadow(0 6px 8px rgba(0,0,0,0.12));
+        }
+
+        /* Wax Seal */
+        .wax-seal {
+            position: absolute;
+            top: 52%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #DFBF78, #B58E43 60%, #8E6C2A 100%);
+            box-shadow: 0 8px 20px rgba(142, 108, 42, 0.45), inset 0 2px 4px rgba(255,255,255,0.6), inset 0 -3px 6px rgba(0,0,0,0.25);
+            z-index: 6;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, opacity 0.5s ease;
+            border: 2px solid rgba(255, 248, 231, 0.5);
+        }
+
+        .wax-seal:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+
+        .wax-seal:active {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
+        .wax-seal-inner {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFDF9;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* Opened State Animations */
+        .envelope-opened .top-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope-opened .wax-seal {
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, -50%) scale(0.6);
+        }
+
+        .envelope-opened .inner-card {
+            transform: translateY(-65%) scale(1.03);
+            z-index: 6;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+
+        /* Slide-in from left to center animation */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Pulse animation for seal */
+        @keyframes softPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.5), 0 8px 20px rgba(142, 108, 42, 0.45); }
+            50% { box-shadow: 0 0 0 14px rgba(197, 160, 89, 0), 0 8px 20px rgba(142, 108, 42, 0.45); }
+        }
+        .seal-pulse {
+            animation: softPulse 2.5s infinite;
+        }
+
+        /* Floating Petals */
+        .petal {
+            position: fixed;
+            top: -20px;
+            pointer-events: none;
+            z-index: 30;
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 0.7; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+        }
